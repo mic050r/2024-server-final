@@ -35,4 +35,10 @@ public class AspectClass {
         System.out.println("정상 종료 후 메서드");
         System.out.println("Return value: " + returnValue);
     }
+
+    // After-Throwing Advice: 메서드 실행 중 예외가 발생했을 때 실행되는 로직
+    public void afterThrowing(Throwable e) {
+        System.out.println("예외 발생 메서드");
+        System.out.println("e : " + e);
+    }
 }
