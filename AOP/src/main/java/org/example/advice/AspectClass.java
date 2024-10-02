@@ -29,4 +29,10 @@ public class AspectClass {
         // 반환 값을 로그에 남기는 등 추가 작업 가능.
         System.out.println("Return value from around: " + returnValue);
     }
+
+    // After-Returning Advice: 메서드가 정상적으로 종료된 후에 실행되는 로직
+    public void afterReturning(Object returnValue) {
+        System.out.println("정상 종료 후 메서드");
+        System.out.println("Return value: " + returnValue);
+    }
 }
