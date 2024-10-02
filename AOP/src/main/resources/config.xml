@@ -17,6 +17,8 @@
     <aop:config>
         <!-- 충고 등록 -->
         <aop:aspect ref="aspectClass">
+            <!-- Pointcut 등록 -->
+            <aop:pointcut id="point" expression="execution(* org.example.bean.TargetClass.*(..))"/>
 
         </aop:aspect>
     </aop:config>
