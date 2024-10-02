@@ -20,6 +20,9 @@
             <!-- Pointcut 등록 -->
             <aop:pointcut id="point" expression="execution(* org.example.bean.TargetClass.*(..))"/>
 
+            <!-- Before Advice 등록: 메서드 실행 전에 실행 -->
+            <aop:before method="before" pointcut-ref="point"/>
+
         </aop:aspect>
     </aop:config>
 
