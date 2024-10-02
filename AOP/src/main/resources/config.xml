@@ -23,6 +23,8 @@
             <!-- Before Advice 등록: 메서드 실행 전에 실행 -->
             <aop:before method="before" pointcut-ref="point"/>
 
+            <!-- After Advice 등록: 메서드 실행 후에 실행 -->
+            <aop:after method="after" pointcut-ref="point"/>
         </aop:aspect>
     </aop:config>
 

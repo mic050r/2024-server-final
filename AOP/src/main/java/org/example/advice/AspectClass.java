@@ -9,4 +9,9 @@ public class AspectClass {
     public void before() {
         System.out.println("Before Method");
     }
+
+    // After Advice: 메서드 호출 후에 실행되는 로직
+    public void after() {
+        System.out.println("After Method");
+    }
 }
