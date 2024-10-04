@@ -1,10 +1,9 @@
 package org.example.mvc.get;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.example.mvc.dto.TestDTO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 @Controller
@@ -41,7 +40,7 @@ public class GetController {
     }
 
     @GetMapping("test4/{data1}/{data2}/{data3}")
-    public String test(@PathVariable("data1") int data1,
+    public String test4(@PathVariable("data1") int data1,
                        @PathVariable("data2") int data2,
                        @PathVariable("data3") int data3) {
         System.out.println("data1 : " + data1);
@@ -51,7 +50,7 @@ public class GetController {
     }
 
     @GetMapping("test5")
-    public String test(@RequestParam("data1") String data1,
+    public String test5(@RequestParam("data1") String data1,
                        @RequestParam("data2") String data2,
                        @RequestParam("data3") String[] data3,
                        @RequestParam(value = "data4", required = false, defaultValue = "initial") String data4) {
@@ -62,5 +61,17 @@ public class GetController {
         }
         System.out.println("data4 : " + data4);
         return "result";
+    }
+
+    @PostMapping("test6")
+    public String test6(@ModelAttribute TestDTO dto) {
+        // @ModelAttribute ModelDTO dto : 사용자의 입력값이 자동으로 dto에 들어간다
+        System.out.println(dto.getNum());
+        return "test6";
+    }
+
+    @GetMapping("test6")
+    public String test6() {
+        return "test6";
     }
 }
