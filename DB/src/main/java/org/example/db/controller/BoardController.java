@@ -45,4 +45,10 @@ public class BoardController {
         model.addAttribute("result", result);
         return "result";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") int id){
+        boardService.delete(id);
+        return "index";
+    }
 }

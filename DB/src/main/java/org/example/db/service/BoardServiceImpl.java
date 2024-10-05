@@ -29,4 +29,9 @@ public class BoardServiceImpl implements BoardService{
     public List<BoardDTO> listAll() {
         return mapper.listAll();
     }
+
+    @Override
+    public void delete(int id) {
+        mapper.delete(id);
+    }
 }

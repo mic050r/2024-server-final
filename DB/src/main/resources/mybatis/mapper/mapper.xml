@@ -13,4 +13,8 @@
     <select id="listAll" resultType="org.example.db.dto.BoardDTO">
         select * from board order by id desc
     </select>
+
+    <delete id="delete" parameterType="int">
+        delete from board where id = #{id}
+    </delete>
 </mapper>

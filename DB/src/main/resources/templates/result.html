@@ -21,7 +21,7 @@
         <td><p th:text="${item.writer}"></p></td>
         <td><p th:text="${item.contents}"></p></td>
         <td><p th:text="${item.regDate}"></p></td>
-        <td>삭제</td>
+        <td><a th:href="@{'/board/delete/' + ${item.id}}">삭제</a></td>
     </tr>
 </table>
 </body>

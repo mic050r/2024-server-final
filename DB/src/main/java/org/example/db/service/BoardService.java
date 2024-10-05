@@ -12,4 +12,5 @@ public interface BoardService {
     public void insert(BoardDTO dto);
     public BoardDTO select(int id);
     public List<BoardDTO> listAll();
+    public void delete(int id);
 }
