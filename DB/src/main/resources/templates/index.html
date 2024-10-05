@@ -7,5 +7,12 @@
 <body>
 <tb:block th:replace="fragments/menu ::fragment"></tb:block>
 <h1 th:text="'Welcome Index'"></h1>
+
+<div th:if="${result}">
+    <p th:text="${result.id}"></p>
+    <p th:text="${result.writer}"></p>
+    <p th:text="${result.contents}"></p>
+    <p th:text="${result.regDate}"></p>
+</div>
 </body>
 </html>

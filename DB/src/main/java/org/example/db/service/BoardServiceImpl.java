@@ -17,4 +17,9 @@ public class BoardServiceImpl implements BoardService{
     public void insert(BoardDTO dto) {
         mapper.insert(dto);
     }
+
+    @Override
+    public BoardDTO select(int id) {
+        return mapper.select(id);
+    }
 }

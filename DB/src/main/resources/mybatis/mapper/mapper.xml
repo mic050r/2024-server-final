@@ -5,4 +5,8 @@
         insert into board(id, writer, contents, regDate)
         values (seq_id.nextval, #{writer}, #{contents}, sysdate)
     </insert>
+
+    <select id="select" resultType="org.example.db.dto.BoardDTO">
+        select * from board where id = #{id}
+    </select>
 </mapper>
