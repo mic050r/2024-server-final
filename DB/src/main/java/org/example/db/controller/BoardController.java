@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
@@ -35,5 +37,12 @@ public class BoardController {
         BoardDTO result = boardService.select(id);
         model.addAttribute("result", result);
         return "index";
+    }
+
+    @GetMapping("/list")
+    public String listAll(Model model) {
+        List<BoardDTO> result = boardService.listAll();
+        model.addAttribute("result", result);
+        return "result";
     }
 }

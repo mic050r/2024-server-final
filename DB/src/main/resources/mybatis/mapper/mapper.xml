@@ -9,4 +9,8 @@
     <select id="select" resultType="org.example.db.dto.BoardDTO">
         select * from board where id = #{id}
     </select>
+
+    <select id="listAll" resultType="org.example.db.dto.BoardDTO">
+        select * from board order by id desc
+    </select>
 </mapper>

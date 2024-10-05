@@ -6,6 +6,8 @@ import org.example.db.dto.BoardDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService{
@@ -21,5 +23,10 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public BoardDTO select(int id) {
         return mapper.select(id);
+    }
+
+    @Override
+    public List<BoardDTO> listAll() {
+        return mapper.listAll();
     }
 }

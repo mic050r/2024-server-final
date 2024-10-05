@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tb="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<th:block th:replace="fragments/menu ::fragment"></th:block>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Writer</td>
+        <td>Content</td>
+        <td>Date</td>
+        <td>ETC</td>
+    </tr>
+    <tr th:each="item:${result}">
+        <td><a th:href="@{'/board/' + ${item.id}}"><p th:text="${item.id}"></p></a></td>
+        <td><p th:text="${item.writer}"></p></td>
+        <td><p th:text="${item.contents}"></p></td>
+        <td><p th:text="${item.regDate}"></p></td>
+        <td>삭제</td>
+    </tr>
+</table>
+</body>
+</html>
